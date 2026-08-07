@@ -7,16 +7,15 @@ export const personal = {
   phone: "+55 (49) 99127-0949",
   whatsapp: "https://wa.me/5549991270949?text=Ol%C3%A1%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.",
   linkedin: "https://www.linkedin.com/in/joao-vieira-1a8360161/",
-  // TODO: substitua pelo seu usuário real do GitHub
-  github: "https://github.com/",
+  github: "https://github.com/vieiraaa",
   resumePdf: "/curriculo-joao-victor-vieira.pdf",
   summary:
     "Analista de Sistemas e Desenvolvedor Full Stack com experiência sólida em aplicações corporativas, integração de sistemas, automação de processos, Business Intelligence e Inteligência Artificial aplicada. Atuo no ciclo completo de desenvolvimento — de APIs a agentes de IA — com Python, JavaScript, Node.js, React, Next.js e PostgreSQL.",
   highlights: [
-    { label: "Usuários atendidos por sistemas implantados", value: "100+" },
-    { label: "Colaboradores usando dashboards executivos", value: "200+" },
-    { label: "Horas semanais economizadas com automação", value: "60h" },
-    { label: "Ativos industriais sob gestão", value: "5.000+" },
+    { label: "Usuários atendidos por sistemas implantados", value: "230 +" },
+    { label: "Colaboradores usando dashboards executivos", value: "80 +" },
+    { label: "Horas semanais economizadas com automação", value: "3800 h" },
+    { label: "Ativos industriais sob gestão", value: "3.100 +" },
   ],
 };
 

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import Sidebar from "@/components/Sidebar";
+import CursorDot from "@/components/CursorDot";
 import { personal } from "@/lib/data";
 
 const spaceGrotesk = Space_Grotesk({
@@ -11,15 +12,15 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-mont",
   display: "swap",
 });
 
@@ -74,10 +75,11 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       suppressHydrationWarning
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${montserrat.variable}`}
     >
-      <body className="bg-dot-grid">
+      <body className="bg-dot-grid cursor-none">
         <ThemeProvider>
+          <CursorDot />
           <Sidebar />
           <main className="min-h-screen pb-24 pt-20 md:pb-24 md:pl-28 md:pt-12 lg:pl-32">
             {children}

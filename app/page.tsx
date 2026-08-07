@@ -5,6 +5,7 @@ import TerminalHero from "@/components/TerminalHero";
 import RoleRotator from "@/components/RoleRotator";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
+import StatCounter from "@/components/StatCounter";
 import { personal, projects, experiences, technologies } from "@/lib/data";
 
 const featuredSlugs = ["jie-bnamiq", "rag-fastapi", "assistente-ia-suporte", "dashboard-executivo"];
@@ -17,22 +18,15 @@ const coreStack = technologies
 export default function HomePage() {
   return (
     <>
-      <section className="section-shell grid gap-8 pt-5 md:grid-cols-2 md:items-center md:gap-16 md:pt-16">
+      <section className="font-mont section-shell grid gap-8 pt-5 md:grid-cols-2 md:items-center md:gap-16 md:pt-8">
         <Reveal>
-          <p className="eyebrow mb-4">
-            {personal.location} · Disponível para novos projetos
-          </p>
-          <p className="mb-2 font-mono text-sm text-inkSoft">
+          <p className="font-mont mb-2 font-mono text-sm text-inkSoft">
             <RoleRotator />
           </p>
-          <h1 className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem]">
-            Construo sistemas que{" "}
-            <span className="border-b-4 border-accent2 pb-0.5">
-              pensam, integram
-            </span>{" "}
-            e entregam resultado em produção.
+          <h1 className="font-mont font-display text-4xl font-bold leading-[1.04] tracking-tight text-ink sm:text-5xl lg:text-[3.0rem] md:pt-8">
+            Desenvolvendo <span className="theme-contrast color-ink-2 ">sistemas inteligentes</span> para problemas reais.
           </h1>
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-inkSoft sm:text-lg">
+          <p className="text-justify mt-6 max-w-lg text-base leading-relaxed text-inkSoft sm:text-lg">
             {personal.summary}
           </p>
 
@@ -82,10 +76,10 @@ export default function HomePage() {
         <div className="stat-table grid grid-cols-2 divide-y divide-border sm:grid-cols-4 sm:divide-y-0 sm:divide-x">
           {personal.highlights.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.06} className="stat-cell">
-              <p className="font-mono text-3xl font-bold tabular-nums text-ink sm:text-4xl">
-                {stat.value}
+              <p className="font-mont theme-contrast font-mono text-3xl font-bold tabular-nums sm:text-4xl">
+                <StatCounter value={stat.value} />
               </p>
-              <p className="mt-2 text-xs leading-snug text-inkSoft">
+              <p className="font-mont mt-2 text-xs leading-snug text-inkSoft">
                 {stat.label}
               </p>
             </Reveal>

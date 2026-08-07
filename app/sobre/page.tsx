@@ -45,12 +45,12 @@ export default function SobrePage() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <Link
-              href="/projetos"
-              className="focus-ring inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accentInk transition hover:opacity-90"
+            <Link 
+              href="/projetos" 
+              className="theme-contrast-bg fo   cus-ring inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
             >
               Ver projetos
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={16} className="text-white" />
             </Link>
             <span className="inline-flex items-center gap-2 text-sm text-inkSoft">
               <MapPin size={15} className="text-accent2" />
