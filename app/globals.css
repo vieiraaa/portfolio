@@ -13,6 +13,7 @@
   --color-accent-2: #002f5a;
   --color-text-2: #002f5a;
   --color-border: rgba(10, 10, 11, 0.1);
+  --color-ink-2: #002f5a;
 
   /* Theme-aware accent for dark/light page variations */
   --theme-contrast: #002f5a;

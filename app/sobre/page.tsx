@@ -20,7 +20,7 @@ export default function SobrePage() {
           <div className="card relative overflow-hidden rounded-[28px]">
             {/* Placeholder de banco de imagens — trocar por foto real em /public */}
             <img
-              src="https://picsum.photos/seed/joaovieira/700/860"
+              src="https://media.licdn.com/dms/image/v2/D4D03AQED0jav0OLHJA/profile-displayphoto-shrink_800_800/B4DZV_8w0DHkAc-/0/1741608390494?e=1787788800&v=beta&t=kfkT7drIFGKMr6CL5rTwKOV1bZwCx2gu3sXjeB_3iCc"
               alt={personal.fullName}
               className="aspect-[4/5] w-full object-cover grayscale"
             />
@@ -30,28 +30,49 @@ export default function SobrePage() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1} className="pl-100 md:pl-6 lg:pl-10">
+                <Reveal delay={0.1} className="md:pl-6 lg:pl-10">
           <p className="eyebrow mb-4">Sobre mim</p>
+
           <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.6rem]">
             {personal.fullName}
           </h1>
+
           <p className="mt-3 text-base text-inkSoft sm:text-lg">
             {personal.role}
           </p>
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-inkSoft">
-            Comecei na operação industrial, migrei para desenvolvimento
-            automatizando meu próprio trabalho, e hoje construo sistemas e
-            agentes de IA do requisito ao deploy.
-          </p>
+
+          <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-inkSoft">
+            <p>
+              Minha trajetória começou na indústria, atuando diretamente com
+              processos, planejamento e operação. Antes de desenvolver
+              sistemas, aprendi a entender problemas reais de negócio, seus
+              impactos e as pessoas que precisam resolvê-los.
+            </p>
+
+            <p>
+              A programação surgiu como uma ferramenta para melhorar esses
+              processos. Comecei automatizando tarefas da própria rotina com
+              Python, VBA e dados, evoluindo para desenvolvimento Full Stack,
+              integrações, Business Intelligence e, posteriormente,
+              Inteligência Artificial.
+            </p>
+
+            <p>
+              Hoje desenvolvo sistemas, APIs, automações e agentes de IA,
+              conectando tecnologia à necessidade de quem está na operação —
+              do levantamento do requisito ao deploy e à evolução da solução.
+            </p>
+          </div>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <Link 
-              href="/projetos" 
-              className="theme-contrast-bg fo   cus-ring inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+            <Link
+              href="/projetos"
+              className="theme-contrast-bg focus-ring inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
             >
               Ver projetos
               <ArrowUpRight size={16} className="text-white" />
             </Link>
+
             <span className="inline-flex items-center gap-2 text-sm text-inkSoft">
               <MapPin size={15} className="text-accent2" />
               {personal.location}
@@ -63,10 +84,18 @@ export default function SobrePage() {
       <section className="mt-20 md:mt-28">
         <Reveal className="mb-14">
           <p className="eyebrow mb-3">Trajetória</p>
+
           <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">
-            Do chão de fábrica ao código em produção.
+            Da operação à tecnologia.
           </h2>
+
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-inkSoft">
+            Uma trajetória construída entre processos industriais, gestão
+            técnica, dados, automação, desenvolvimento de software e
+            Inteligência Artificial.
+          </p>
         </Reveal>
+
         <Trajectory items={trajectory} />
       </section>
 

@@ -90,12 +90,12 @@ export default function Sidebar() {
       <motion.aside
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        animate={{ width: isExpanded ? 236 : 69 }}
+        animate={{ width: isExpanded ? 236 : 67 }}
         transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
         className="glass-panel hidden md:flex fixed top-4 left-4 bottom-4 z-[70] flex-col rounded-[var(--radius-panel)] py-5 px-3 overflow-visible items-center"
       >
         <Link href="/" className="flex items-center justify-center gap-2 px-2 mb-8 min-h-8 w-full">
-          <div className="relative w-8 h-8 shrink-0 rounded-[10px] bg-accent flex items-center justify-center text-[#0b0e11] font-[family-name:var(--font-display)] font-extrabold text-xs">
+          <div className="text-bg relative w-8 h-8 shrink-0 rounded-[10px] bg-accent flex items-center justify-center text-[#0b0e11] font-[family-name:var(--font-display)] font-extrabold text-xs">
             JV
             <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-accent2 ring-2 ring-surface animate-pulseSoft" />
           </div>
@@ -121,8 +121,8 @@ export default function Sidebar() {
                 href={link.href}
                 className={`focus-ring group relative flex items-center gap-3 rounded-[var(--radius-control)] px-3 py-3 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   active
-                    ? "bg-accent text-[#0b0e11] shadow-[0_6px_16px_-6px_rgba(255,176,32,0.55)]"
-                    : "text-inkSoft hover:bg-black/5 dark:hover:bg-white/5"
+                    ? "bg-accent text-bg shadow-[0_6px_16px_-6px_rgba(50,50,90,0.55)]"
+                    : "text-inkSoft hover:bg-black/5 focus:bg-black/5 focus-visible:bg-black/5 focus:text-white focus-visible:text-white dark:text-ink dark:hover:bg-white/5 dark:focus:bg-white/5 dark:focus-visible:bg-white/5 dark:focus:text-[#ffffff] dark:focus-visible:text-[#ffffff]"
                 }`}
               >
                 <Icon size={18} className="shrink-0" />
@@ -142,7 +142,7 @@ export default function Sidebar() {
 
         <button
           onClick={() => setPaletteOpen(true)}
-          className="focus-ring flex items-center gap-3 rounded-[var(--radius-control)] px-2.5 py-2.5 mb-1 w-full text-inkSoft hover:bg-black/5 dark:hover:bg-white/5 transition"
+          className="focus-ring flex items-center gap-3 rounded-[var(--radius-control)] px-2.5 py-2.5 mb-1 w-full text-inkSoft hover:bg-black/5 focus:bg-black/5 focus-visible:bg-black/5 focus:text-white focus-visible:text-white dark:hover:bg-white/5 dark:focus:bg-white/5 dark:focus-visible:bg-white/5 dark:focus:text-[#0b0e11] dark:focus-visible:text-[#0b0e11] transition"
         >
           <Search size={18} className="shrink-0" />
           {isExpanded && (
@@ -158,7 +158,7 @@ export default function Sidebar() {
         <a
           href={personal.resumePdf}
           download
-          className="focus-ring flex items-center gap-3 rounded-[var(--radius-control)] px-2.5 py-2.5 mb-3 w-full text-inkSoft hover:bg-black/5 dark:hover:bg-white/5 transition"
+          className="focus-ring flex items-center gap-3 rounded-[var(--radius-control)] px-2.5 py-2.5 mb-3 w-full text-inkSoft hover:bg-black/5 focus:bg-black/5 focus-visible:bg-black/5 focus:text-white focus-visible:text-white dark:hover:bg-white/5 dark:focus:bg-white/5 dark:focus-visible:bg-white/5 dark:focus:text-[#0b0e11] dark:focus-visible:text-[#0b0e11] transition"
         >
           <FileDown size={18} className="shrink-0" />
           {isExpanded && (
@@ -185,7 +185,7 @@ export default function Sidebar() {
               target="_blank"
               rel="noreferrer"
               aria-label={item.label}
-              className="focus-ring flex h-10 w-10 items-center justify-center rounded-full bg-surface2 text-ink transition hover:bg-accent hover:text-[#0b0e11]"
+              className="focus-ring flex h-10 w-10 items-center justify-center rounded-full bg-surface2 text-ink transition hover:bg-accent hover:text-[#0b0e11] focus:bg-accent focus-visible:bg-accent focus:text-[#0b0e11] focus-visible:text-[#0b0e11]"
             >
               <Icon size={18} />
             </a>
@@ -205,7 +205,7 @@ export default function Sidebar() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={item.label}
-                className="focus-ring flex h-10 w-10 items-center justify-center rounded-full bg-surface2 text-ink transition-all duration-300 hover:bg-accent hover:text-[#0b0e11] active:scale-95"
+                className="focus-ring flex h-10 w-10 items-center justify-center rounded-full bg-surface2 text-ink transition-all duration-300 hover:bg-accent hover:text-[#0b0e11] focus:bg-accent focus:text-[#0b0e11] active:scale-95"
               >
                 <Icon size={20} />
               </a>
