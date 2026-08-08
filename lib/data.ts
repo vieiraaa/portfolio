@@ -132,6 +132,7 @@ export type Project = {
   slug: string;
   name: string;
   category: string;
+  status?: string;
   description: string;
   problem: string;
   solution: string;
