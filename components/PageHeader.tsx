@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import Reveal from "@/components/Reveal";
 
 export default function PageHeader({
@@ -6,7 +7,7 @@ export default function PageHeader({
   description,
 }: {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   description?: string;
 }) {
   return (

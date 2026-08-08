@@ -43,13 +43,11 @@ export default function TecnologiasPage() {
         {/* HERO */}
         <PageHeader
           eyebrow="Stack técnica"
-          title={
-            <>
-              Tecnologia para transformar
-              <br />
-              problemas em soluções.
-            </>
-          }
+          title={<>
+            Tecnologia para transformar
+            <br />
+            problemas em soluções.
+          </>}
           description="Uma stack construída na prática, combinando desenvolvimento full stack, dados, automação, inteligência artificial e ferramentas de negócio."
         />
 
