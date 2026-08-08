@@ -10,12 +10,20 @@
   --color-ink-soft: #6b6b70;
   --color-accent: #0a0a0b;
   --color-accent-ink: #ffffff;
-  --color-accent-2: #af0202;
+  --color-accent-2: #002f5a;
+  --color-text-2: #002f5a;
   --color-border: rgba(10, 10, 11, 0.1);
+
+  /* Theme-aware accent for dark/light page variations */
+  --theme-contrast: #002f5a;
+  --theme-contrast-ink: #002f5a;
+  --theme-contrast-soft: rgba(2, 46, 170, 0.14);
 
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-mont: "Montserrat", "Montserrat Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-face: "Montserrat", montserrat, ui-sans-serif, system-ui, sans-serif;
 
   --radius-panel: 22px;
   --radius-control: 12px;
@@ -29,12 +37,22 @@
   --color-ink-soft: #8b8b90;
   --color-accent: #f5f5f6;
   --color-accent-ink: #08090a;
-  --color-accent-2: #af0202;
+  --color-accent-2: #002f5a;
+  --color-ink-2: #002f5a;
   --color-border: rgba(245, 245, 246, 0.09);
+
+  --theme-contrast: #3ea4e9;
+  --theme-contrast-ink: #007fd3;
+  --theme-contrast-soft: rgba(249, 115, 22, 0.14);
 }
+
+/* =========================================================
+   Base
+   ========================================================= */
 
 * {
   border-color: var(--color-border);
+  cursor: none !important;
 }
 
 html {
@@ -45,8 +63,158 @@ body {
   background-color: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-body);
-  transition: background-color 0.35s ease, color 0.35s ease;
+  cursor: none !important;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
+
+button,
+a,
+input,
+textarea,
+select,
+[role="button"],
+[tabindex] {
+  cursor: none !important;
+}
+
+.font-mont {
+  font-family: var(--font-mont);
+}
+
+/* =========================================================
+   Custom Cursor
+   ========================================================= */
+
+.cursor-root {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  z-index: 999999;
+}
+
+/* =========================================================
+   Cursor Dot
+   ========================================================= */
+
+.cursor-dot {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  pointer-events: none;
+
+  mix-blend-mode: difference;
+
+  will-change: transform;
+
+  transform: translate(-50%, -50%);
+
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+
+  z-index: 9999999;
+}
+
+.cursor-dot.is-active {
+  width: 10px;
+  height: 10px;
+}
+
+/* =========================================================
+   Cursor Ring
+   ========================================================= */
+
+.cursor-ring {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 26px;
+  height: 26px;
+
+  pointer-events: none;
+
+  will-change: transform;
+
+  transform: translate(-50%, -50%);
+}
+
+/* =========================================================
+   Cursor Ring - Pulse
+   ========================================================= */
+
+.cursor-ring-pulse {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  border: 1px solid #4a78a3;
+
+  background: transparent;
+
+  opacity: 0;
+
+  mix-blend-mode: difference;
+
+  transform: translate(-50%, -50%) scale(0);
+
+  transform-origin: center;
+
+  pointer-events: none;
+}
+
+.cursor-ring-pulse.is-active {
+  animation: cursorPulse 1.2s ease-out infinite;
+}
+
+@keyframes cursorPulse {
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.8);
+  }
+}
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -59,19 +227,38 @@ body {
   }
 }
 
+/* =========================================================
+   Text Selection
+   ========================================================= */
+
 ::selection {
   background-color: var(--color-accent);
   color: var(--color-accent-ink);
 }
 
-/* Glass panel — base do padrão de sidebar herdado do JIE BNAMIQ */
+/* =========================================================
+   Glass Panel
+   Base do padrão de sidebar herdado do JIE BNAMIQ
+   ========================================================= */
+
 .glass-panel {
-  background-color: color-mix(in srgb, var(--color-surface) 78%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-surface) 78%,
+    transparent
+  );
+
   border: 1px solid var(--color-border);
+
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
+
   box-shadow: 0 30px 80px -50px rgba(0, 0, 0, 0.55);
 }
+
+/* =========================================================
+   Eyebrow
+   ========================================================= */
 
 .eyebrow {
   font-family: var(--font-mono);
@@ -80,6 +267,10 @@ body {
   text-transform: uppercase;
   color: var(--color-ink-soft);
 }
+
+/* =========================================================
+   Statistics Table
+   ========================================================= */
 
 .stat-table {
   border: 1px solid var(--color-border);
@@ -98,6 +289,10 @@ body {
   background-color: var(--color-surface-2);
 }
 
+/* =========================================================
+   Section Shell
+   ========================================================= */
+
 .section-shell {
   max-width: 1180px;
   margin: 0 auto;
@@ -110,11 +305,19 @@ body {
   }
 }
 
+/* =========================================================
+   Card
+   ========================================================= */
+
 .card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-panel);
 }
+
+/* =========================================================
+   Focus Ring
+   ========================================================= */
 
 .focus-ring:focus-visible {
   outline: 2px solid var(--color-accent);
@@ -122,7 +325,48 @@ body {
   border-radius: 8px;
 }
 
+/* =========================================================
+   Background Dot Grid
+   ========================================================= */
+
 .bg-dot-grid {
-  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-image: radial-gradient(
+    var(--color-border) 1px,
+    transparent 1px
+  );
+
   background-size: 22px 22px;
+}
+
+/* =========================================================
+   Theme Contrast
+   ========================================================= */
+
+.theme-contrast {
+  color: var(--theme-contrast);
+}
+
+.theme-contrast-bg {
+  background-color: var(--theme-contrast);
+}
+
+.theme-contrast-text {
+  color: var(--theme-contrast);
+}
+
+.theme-contrast-border {
+  border-color: var(--theme-contrast);
+}
+
+.theme-contrast-soft {
+  background-color: var(--theme-contrast-soft);
+  color: var(--theme-contrast);
+}
+
+.theme-contrast-fill {
+  fill: var(--theme-contrast);
+}
+
+.theme-contrast-stroke {
+  stroke: var(--theme-contrast);
 }

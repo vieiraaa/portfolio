@@ -4,7 +4,9 @@ import Reveal from "@/components/Reveal";
 import TerminalHero from "@/components/TerminalHero";
 import RoleRotator from "@/components/RoleRotator";
 import ProjectCard from "@/components/ProjectCard";
+import { ParticleField } from "@/components/ParticleField";
 import Footer from "@/components/Footer";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { personal, projects, experiences, technologies } from "@/lib/data";
 
 const featuredSlugs = ["jie-bnamiq", "rag-fastapi", "assistente-ia-suporte", "dashboard-executivo"];
@@ -19,20 +21,13 @@ export default function HomePage() {
     <>
       <section className="section-shell grid gap-8 pt-5 md:grid-cols-2 md:items-center md:gap-16 md:pt-16">
         <Reveal>
-          <p className="eyebrow mb-4">
-            {personal.location} · Disponível para novos projetos
-          </p>
           <p className="mb-2 font-mono text-sm text-inkSoft">
             <RoleRotator />
           </p>
-          <h1 className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem]">
-            Construo sistemas que{" "}
-            <span className="border-b-4 border-accent2 pb-0.5">
-              pensam, integram
-            </span>{" "}
-            e entregam resultado em produção.
+          <h1 className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-3.4rem]">
+            Construindo<br></br><span className="theme-contrast"> sistemas inteligentes </span> para problemas reais.
           </h1>
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-inkSoft sm:text-lg">
+          <p className="text-justify mt-6 max-w-lg text-base leading-relaxed text-inkSoft sm:text-lg">
             {personal.summary}
           </p>
 
@@ -82,9 +77,10 @@ export default function HomePage() {
         <div className="stat-table grid grid-cols-2 divide-y divide-border sm:grid-cols-4 sm:divide-y-0 sm:divide-x">
           {personal.highlights.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.06} className="stat-cell">
-              <p className="font-mono text-3xl font-bold tabular-nums text-ink sm:text-4xl">
-                {stat.value}
-              </p>
+              <AnimatedCounter
+                value={stat.value}
+                className="theme-contrast font-mono text-3xl font-bold tabular-nums text-ink sm:text-4xl"
+              />
               <p className="mt-2 text-xs leading-snug text-inkSoft">
                 {stat.label}
               </p>
@@ -96,9 +92,9 @@ export default function HomePage() {
       <section className="section-shell mt-12 md:mt-20 lg:mt-24">
         <Reveal className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="eyebrow mb-3">Stack principal</p>
+            <p className="eyebrow mb-3">Stack & Tecnologias</p>
             <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">
-              Ferramentas com as quais entrego todos os dias.
+              As tecnologias por trás do que eu construo.
             </h2>
           </div>
           <Link
@@ -125,7 +121,7 @@ export default function HomePage() {
           <div>
             <p className="eyebrow mb-3">Projetos em destaque</p>
             <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">
-              Do requisito ao deploy — soluções reais.
+              Onde código, dados e IA viram produto.
             </h2>
           </div>
           <Link
@@ -147,7 +143,7 @@ export default function HomePage() {
         <Reveal className="mb-8">
           <p className="eyebrow mb-3">Experiência</p>
           <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">
-            Trajetória profissional resumida.
+            Uma jornada construída entre indústria e tecnologia.
           </h2>
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-3">
@@ -175,18 +171,19 @@ export default function HomePage() {
       </section>
 
       <section className="section-shell mt-12 md:mt-20 lg:mt-24">
-        <Reveal className="card flex flex-col items-start justify-between gap-5 p-6 sm:flex-row sm:items-center sm:p-8">
-          <div>
-            <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+        <Reveal className="card relative overflow-hidden flex flex-col items-start justify-between gap-5 bg-ink p-6 sm:flex-row sm:items-center sm:p-8">
+          <ParticleField density={18} />
+          <div className="relative z-10">
+            <h2 className="font-display text-2xl font-bold text-theme-contrast sm:text-3xl">
               Vamos conversar sobre o seu próximo sistema?
             </h2>
-            <p className="mt-2 max-w-md text-sm text-inkSoft sm:text-base">
+            <p className="mt-2 max-w-md text-sm text-theme-contrast/60 sm:text-base">
               Aberto a oportunidades como Full Stack, AI Engineer e consultorias em automação.
             </p>
           </div>
           <Link
             href="/contato"
-            className="focus-ring inline-flex shrink-0 items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accentInk transition hover:opacity-90"
+            className="focus-ring relative z-10 inline-flex shrink-0 items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accentInk transition hover:opacity-90"
           >
             Entrar em contato
             <ArrowUpRight size={16} />
