@@ -13,13 +13,15 @@ export const metadata: Metadata = {
 export default function ProjetosPage() {
   return (
     <>
-      <PageHeader
-        eyebrow={`${projects.length} projetos`}
-        title="Sistemas, integrações e agentes de IA em produção."
-        description="Da plataforma comercial de uma joint venture industrial a agentes de IA para triagem de suporte — cada projeto abaixo resolve um problema de negócio real."
-      />
+      <div className="mx-4 sm:mx-0">
+        <PageHeader
+          eyebrow={`${projects.length} projetos`}
+          title="Sistemas, integrações e agentes de IA em produção."
+          description="Da plataforma comercial de uma joint venture industrial a agentes de IA para triagem de suporte — cada projeto abaixo resolve um problema de negócio real."
+        />
+      </div>
 
-      <section className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-7 lg:mt-16 lg:grid-cols-3 lg:gap-8">
+      <section className="mx-4 mt-10 grid gap-6 sm:mx-0 sm:mt-12 sm:grid-cols-2 sm:gap-7 lg:mt-16 lg:grid-cols-3 lg:gap-8">
         {projects.map((project, i) => (
           <ProjectCard key={project.slug} project={project} index={i} />
         ))}
