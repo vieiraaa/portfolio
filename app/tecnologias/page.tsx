@@ -39,32 +39,35 @@ const highlights = [
 export default function TecnologiasPage() {
   return (
     <>
-      <main>
-        {/* HERO */}
-        <PageHeader
-          eyebrow="Stack técnica"
-          title={<>
+      {/* HERO */}
+      <div className="mx-4 sm:mx-0">
+      <PageHeader
+        eyebrow="Stack técnica"
+        title={
+          <>
             Tecnologia para transformar
             <br />
             problemas em soluções.
-          </>}
-          description="Uma stack construída na prática, combinando desenvolvimento full stack, dados, automação, inteligência artificial e ferramentas de negócio."
-        />
-
+          </>
+        }
+        description="Uma stack construída na prática, combinando desenvolvimento full stack, dados, automação, inteligência artificial e ferramentas de negócio."
+      />
+    </div>
+      <main className="px-4 sm:px-0">
         {/* RESUMO DA STACK */}
-        <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
+        <section className="mx-auto max-w-7xl pb-16 sm:pb-20 lg:pb-24">
           <div className="grid overflow-hidden rounded-3xl border border-border bg-surface md:grid-cols-3">
             {highlights.map((item, index) => (
               <div
                 key={item.number}
                 className={[
-                  "group relative p-7 sm:p-9",
+                  "group relative p-6 sm:p-8 lg:p-9",
                   index !== highlights.length - 1
                     ? "border-b border-border md:border-b-0 md:border-r"
                     : "",
                 ].join(" ")}
               >
-                <div className="mb-10 flex items-center justify-between">
+                <div className="mb-8 flex items-center justify-between sm:mb-10">
                   <span className="font-mono text-xs text-muted">
                     {item.number}
                   </span>
@@ -85,8 +88,8 @@ export default function TecnologiasPage() {
         </section>
 
         {/* STACK */}
-        <section className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-12">
-          <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <section className="mx-auto max-w-7xl pb-20 sm:pb-24 lg:pb-28">
+          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:mb-12">
             <div>
               <p className="eyebrow mb-3">Tecnologias</p>
 
@@ -106,86 +109,86 @@ export default function TecnologiasPage() {
 
           <TechGrid categories={technologies} />
         </section>
+      </main>
 
-        {/* COMO EU TRABALHO */}
-        <section className="border-y border-border bg-surface">
-          <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
-            <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
-              <div>
-                <p className="eyebrow mb-3">Além da stack</p>
+      {/* COMO EU TRABALHO */}
+      <section className="border-y border-border bg-surface">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+            <div>
+              <p className="eyebrow mb-3">Além da stack</p>
 
-                <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-                  A ferramenta é só parte da solução.
-                </h2>
+              <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                A ferramenta é só parte da solução.
+              </h2>
+            </div>
+
+            <div className="space-y-8">
+              <div className="border-b border-border pb-8">
+                <span className="font-mono text-xs text-muted">
+                  01 — CONTEXTO
+                </span>
+
+                <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
+                  Antes de escolher uma tecnologia, procuro entender o
+                  problema, os usuários, os dados envolvidos e o resultado
+                  esperado.
+                </p>
               </div>
 
-              <div className="space-y-8">
-                <div className="border-b border-border pb-8">
-                  <span className="font-mono text-xs text-muted">
-                    01 — CONTEXTO
-                  </span>
+              <div className="border-b border-border pb-8">
+                <span className="font-mono text-xs text-muted">
+                  02 — ARQUITETURA
+                </span>
 
-                  <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
-                    Antes de escolher uma tecnologia, procuro entender o
-                    problema, os usuários, os dados envolvidos e o resultado
-                    esperado.
-                  </p>
-                </div>
+                <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
+                  A stack é definida de acordo com o cenário: simplicidade,
+                  manutenção, performance, integração e capacidade de
+                  evolução.
+                </p>
+              </div>
 
-                <div className="border-b border-border pb-8">
-                  <span className="font-mono text-xs text-muted">
-                    02 — ARQUITETURA
-                  </span>
+              <div>
+                <span className="font-mono text-xs text-muted">
+                  03 — ENTREGA
+                </span>
 
-                  <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
-                    A stack é definida de acordo com o cenário: simplicidade,
-                    manutenção, performance, integração e capacidade de
-                    evolução.
-                  </p>
-                </div>
-
-                <div>
-                  <span className="font-mono text-xs text-muted">
-                    03 — ENTREGA
-                  </span>
-
-                  <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
-                    O objetivo não é apenas colocar código em produção, mas
-                    entregar uma solução que realmente resolva o problema e
-                    possa continuar evoluindo.
-                  </p>
-                </div>
+                <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
+                  O objetivo não é apenas colocar código em produção, mas
+                  entregar uma solução que realmente resolva o problema e
+                  possa continuar evoluindo.
+                </p>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA */}
-        <section className="section-shell mt-12 md:mt-20 lg:mt-24">
-          <Reveal className="card relative flex flex-col items-start justify-between gap-5 overflow-hidden bg-ink p-6 sm:flex-row sm:items-center sm:p-8">
-            <ParticleField density={18} />
+      {/* CTA */}
+      <section className="section-shell mt-10 px-4 sm:mt-16 sm:px-0 md:mt-20 lg:mt-24">
+        <Reveal className="card relative flex flex-col items-start justify-between gap-6 overflow-hidden bg-ink p-6 sm:flex-row sm:items-center sm:p-8">
+          <ParticleField density={18} />
 
-            <div className="relative z-10">
-              <h2 className="font-display text-2xl font-bold text-theme-contrast sm:text-3xl">
-                Vamos conversar sobre o seu próximo sistema?
-              </h2>
+          <div className="relative z-10 max-w-2xl">
+            <h2 className="font-display text-2xl font-bold text-theme-contrast sm:text-3xl">
+              Vamos conversar sobre o seu próximo sistema?
+            </h2>
 
-              <p className="mt-2 max-w-md text-sm text-theme-contrast/60 sm:text-base">
-                Aberto a oportunidades como Full Stack, AI Engineer e
-                consultorias em automação.
-              </p>
-            </div>
+            <p className="mt-2 max-w-md text-sm text-theme-contrast/60 sm:text-base">
+              Aberto a oportunidades como Full Stack, AI Engineer e
+              consultorias em automação.
+            </p>
+          </div>
 
-            <Link
-              href="/contato"
-              className="focus-ring relative z-10 inline-flex shrink-0 items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accentInk transition hover:opacity-90"
-            >
-              Entrar em contato
-              <ArrowUpRight size={16} />
-            </Link>
-          </Reveal>
-        </section>
-      </main>
+          <Link
+            href="/contato"
+            className="focus-ring relative z-10 inline-flex shrink-0 items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accentInk transition hover:opacity-90"
+          >
+            Entrar em contato
+            <ArrowUpRight size={16} />
+          </Link>
+        </Reveal>
+      </section>
 
       <Footer />
     </>

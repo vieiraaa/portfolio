@@ -29,19 +29,18 @@ export default function SobrePage() {
             <RotatingBadge text="DESENVOLVEDOR FULLSTACK" size={128} />
           </div>
         </Reveal>
+          <Reveal delay={0.1} className="md:pl-6 lg:pl-10">
+          <p className="mx-4 sm:mx-0 eyebrow mb-4">Sobre mim</p>
 
-                <Reveal delay={0.1} className="md:pl-6 lg:pl-10">
-          <p className="eyebrow mb-4">Sobre mim</p>
-
-          <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.6rem]">
+          <h1 className="mx-4 sm:mx-0 font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.6rem]">
             {personal.fullName}
           </h1>
 
-          <p className="mt-3 text-base text-inkSoft sm:text-lg">
+          <p className="mx-4 sm:mx-0 mt-3 text-base text-inkSoft sm:text-lg">
             {personal.role}
           </p>
-
-          <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-inkSoft">
+        
+          <div className="mx-4 sm:mx-0 mt-6 max-w-xl space-y-4 text-base leading-relaxed text-inkSoft">
             <p>
               Minha trajetória começou na indústria, atuando diretamente com
               processos, planejamento e operação. Antes de desenvolver
@@ -64,7 +63,7 @@ export default function SobrePage() {
             </p>
           </div>
 
-          <div className="mt-7 flex flex-wrap items-center gap-3">
+          <div className="mx-4 sm:mx-0  mt-7 flex flex-wrap items-center gap-3">
             <Link
               href="/projetos"
               className="theme-contrast-bg focus-ring inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
@@ -73,7 +72,7 @@ export default function SobrePage() {
               <ArrowUpRight size={16} className="text-white" />
             </Link>
 
-            <span className="inline-flex items-center gap-2 text-sm text-inkSoft">
+            <span className="mx-4 sm:mx-0 inline-flex items-center gap-2 text-sm text-inkSoft">
               <MapPin size={15} className="text-accent2" />
               {personal.location}
             </span>
@@ -83,22 +82,22 @@ export default function SobrePage() {
 
       <section className="mt-20 md:mt-28">
         <Reveal className="mb-14">
-          <p className="eyebrow mb-3">Trajetória</p>
+          <p className="mx-4 sm:mx-0 eyebrow mb-3">Trajetória</p>
 
-          <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+          <h2 className="mx-4 sm:mx-0 font-display text-2xl font-bold text-ink sm:text-3xl">
             Da operação à tecnologia.
           </h2>
 
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-inkSoft">
+          <p className="mx-4 sm:mx-0 mt-4 max-w-2xl text-base leading-relaxed text-inkSoft">
             Uma trajetória construída entre processos industriais, gestão
             técnica, dados, automação, desenvolvimento de software e
             Inteligência Artificial.
           </p>
         </Reveal>
-
-        <Trajectory items={trajectory} />
+        <div className="mx-4 sm:mx-0 ">
+          <Trajectory items={trajectory} />
+        </div>
       </section>
-
       <Footer />
     </>
   );
