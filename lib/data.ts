@@ -191,6 +191,29 @@ export const projects: Project[] = [
   },
 
   {
+  slug: "controle-condicao-pagamento",
+  name: "Controle Automatizado de Condições de Pagamento",
+  category: "Automação / Workflow / Integração ERP",
+  description:
+    "Sistema de monitoramento em tempo real integrado ao ERP Korp para validação das condições de pagamento aplicadas aos pedidos comerciais, garantindo aderência às condições previamente estabelecidas para cada cliente.",
+  problem:
+    "A equipe comercial precisava garantir que os pedidos fossem registrados com condições de pagamento compatíveis com as regras comerciais definidas para cada cliente. Divergências poderiam resultar em vendas realizadas fora das condições permitidas e dificultar o controle sobre exceções comerciais.",
+  solution:
+    "Desenvolvimento de um workflow automatizado integrado ao ERP Korp e ao n8n para monitorar pedidos confirmados, comparar as condições de pagamento utilizadas com as condições previamente estabelecidas para cada cliente e sinalizar automaticamente eventuais divergências. O fluxo também realiza a confirmação e comunicação das ocorrências por e-mail, permitindo acompanhamento em tempo real das exceções identificadas.",
+  stack: [
+    "n8n",
+    "ERP Korp",
+    "Workflows",
+    "APIs REST",
+    "Automação de E-mails",
+    "Regras de Negócio",
+    "Integração de Sistemas",
+  ],
+  results:
+    "Maior controle sobre as condições comerciais aplicadas aos pedidos, identificação automática de divergências e redução do risco de vendas realizadas fora dos parâmetros permitidos, proporcionando maior rastreabilidade e controle do processo comercial.",
+},
+
+  {
     slug: "dashboard-executivo",
     name: "Dashboard Executivo Industrial",
     category: "Business Intelligence / Data",
