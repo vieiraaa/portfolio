@@ -204,6 +204,7 @@ export const projects: Project[] = [
     "n8n",
     "ERP Korp",
     "Workflows",
+    "Outlook",
     "APIs REST",
     "Automação de E-mails",
     "Regras de Negócio",
