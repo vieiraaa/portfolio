@@ -14,7 +14,7 @@ export const personal = {
   highlights: [
     { label: "Usuários atendidos por sistemas implantados", value: "230 +" },
     { label: "Colaboradores usando dashboards executivos", value: "80 +" },
-    { label: "Horas semanais economizadas com automação", value: "3800 h" },
+    { label: "Horas semanais economizadas com automação", value: "380 h" },
     { label: "Ativos industriais sob gestão", value: "3.100 +" },
   ],
 };
